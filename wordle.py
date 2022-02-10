@@ -2,15 +2,18 @@ import random
 import sys
 from rich import print
 
+
+db = 'fiveLetterWords.txt'
 wordList = []
 answer = ''
 isWin = False
 
 
-def loadFile(file):
+def loadFile():
+    global db
     global answer
     global wordList
-    with open(file) as f:
+    with open(db) as f:
         for line in f:
             wordList.append(line.strip())
 
@@ -69,7 +72,7 @@ def printResult():
 
 def main():
     try: 
-        loadFile('fiveLetterWords.txt')
+        loadFile()
     except:
         print('OOOPS! No such file called \'{0}\' in your directory. Make sure you get the right name for your .txt file.'.format(db))
         sys.exit()
