@@ -76,7 +76,6 @@ def main():
     except:
         print('OOOPS! No such file called \'{0}\' in your directory. Make sure you get the right name for your .txt file.'.format(db))
         sys.exit()
-    print(answer)
     play()
     printResult()
 
